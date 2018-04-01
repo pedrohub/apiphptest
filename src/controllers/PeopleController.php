@@ -21,7 +21,6 @@ class PeopleController {
 					return $res;
 				}
 			}
-				
 		}
 		
 		$insert = $people->add($value, $contacts);
@@ -30,6 +29,41 @@ class PeopleController {
 			$res["cod"] = 200;
 		}
 		return $res;
+	}
+	
+	public function update($id, $name) {
+		$res = null;
+		$people = new People();
+	
+		if($name != null && $id != null){
+			$update = $people->update($id, $name);
+	
+			if($update) {
+				$res["cod"] = 200;
+			}
+			return $res;
+		} else {
+			$res["cod"] = 404;
+			$res["message"] = "name null";
+			return $res;
+		}
+	}
+	
+	public function delete($id) {
+		$res = null;
+		$people = new People();
+	
+		if($id != null){
+			$delete = $people->delete($id);
+			if($delete) {
+				$res["cod"] = 200;
+			}
+			return $res;
+		} else {
+			$res["cod"] = 404;
+			$res["message"] = "id null";
+			return $res;
+		}
 	}
 	
 	function validateTypeContact($contactsList){

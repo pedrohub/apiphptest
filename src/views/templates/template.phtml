@@ -1,23 +1,25 @@
-<h2>Novo ADM</h2>
+<?php include('header.php'); ?>		
 
+<h2>Balanced Brackets</h2>
 
 <form method="post">
    
    <div class="row">
    
       <div class="form-group col-md-7">			
-     	 <label for="name" >Digite a String de characters:</label>		      
-      	<input type="text" class="form-control" name="value">		    
+     	 <label for="name" >Digite os caracteres brackets:</label>		      
+      	<input type="text" class="form-control" name="value" placeholder="Exemplo: [{()}](){} []">		    
       </div>
-     <h1><?= isset($value)? $value : "" ?></h1>
    </div>
    
    <div id="actions" class="row">
       <div class="col-md-12">	
-       <input type="submit"/>	      
-      <button type="submit" class="btn btn-primary">Salvar</button>		      
-      <a href="home.php" class="btn btn-default">Cancelar</a>		    
-   </div>
+       <input type="submit" class="btn btn-primary"/>	      
+  	 </div>
    </div>
    
+    <h3><?= isset($value)? $value : "" ?></h3>
+   
 </form>
+
+<?php include('footer.php'); ?>	

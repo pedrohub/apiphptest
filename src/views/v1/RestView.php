@@ -35,6 +35,27 @@ $app->post('/api/v1/peoples/add', function(Request $request, Response $response)
 
 });
 
+$app->put('/api/v1/peoples/update/{id}', function(Request $request, Response $response){
+
+	$id = $request->getAttribute('id');
+	$name = $request->getParam('name');
+
+	$controller = new PeopleController();
+	$res = $controller->update($id, $name);
+
+	return json_encode($res, JSON_PRETTY_PRINT);
+});
+
+$app->delete('/api/v1/peoples/delete/{id}', function(Request $request, Response $response){
+
+	$id = $request->getAttribute('id');
+
+	$controller = new PeopleController();
+	$res = $controller->delete($id);
+
+	return json_encode($res, JSON_PRETTY_PRINT);
+});
+
 $app->post('/api/v1/contacts/add', function(Request $request, Response $response){
 
 	$type = $request->getParam('type');

@@ -12,22 +12,14 @@ $container = $app->getContainer();
 $container['view'] = new \Slim\Views\PhpRenderer('../src/views/templates/');
 
 $app->get('/', function ($request, $response) {
-    //$name = $request->getAttribute('name');
-    
 	$response = $this->view->render($response, 'template.phtml');
-	//$valor = validateStringBracket("teste");
-    //$response->getBody()->write($valor);
-
     return $response;
 });
 
 $app->post('/', function(Request $request, Response $response) {
-	//var_dump($request);
-	$name = $request->getParam('value');
-echo $name;
-$valor = validateStringBracket($name);
-	$vargs['value'] =  $valor;
-	//$response->getBody()->write("teste");
+	$caracteres = $request->getParam('value');
+	$res = validateStringBracket($caracteres);
+	$vargs['value'] =  $res;
 	$response = $this->view->render($response, 'template.phtml', $vargs);
 	
 	return $response;

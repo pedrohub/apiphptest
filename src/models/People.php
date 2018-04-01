@@ -75,5 +75,47 @@ class People {
 		}
 	}
 	
+	public function update($id, $name) {
+	
+		$sql = "UPDATE PEOPLES SET NAME =:NAME WHERE ID = $id";
+		try{
+			$db = new db();
+			$db = $db->connect();
+	
+			$stmt = $db->prepare($sql);
+			$stmt->bindParam('NAME' , $name);
+			$stmt->execute();
+			$db = null;
+			return true;
+		} catch(PDOException $e){
+			return $e;
+		}
+	}
+	
+	public function delete($id) {
+	
+		$sql = "DELETE FROM PEOPLES WHERE ID = $id";
+		try{
+			
+			$contact = new Contact();
+ 			$contacts = $contact -> getByIdPeople($id);
+ 			if (count($contacts) > 0) {
+ 				foreach($contacts as $itemContact) {
+ 					$contact->delete($itemContact->id);
+ 				}
+ 			}
+			
+			$db = new db();
+			$db = $db->connect();
+	
+			$stmt = $db->prepare($sql);
+			$stmt->execute();
+			$db = null;
+			return true;
+		} catch(PDOException $e){
+			return $e;
+		}
+	}
+	
 	
 }
