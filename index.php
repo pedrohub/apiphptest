@@ -11,8 +11,6 @@ require 'vendor/autoload.php';
 $app = new \Slim\App;
 
 require 'config.php';
-require 'src/views/v1/PeopleView.php';
-
-
+require 'src/views/v1/RestView.php';
 
 $app->run();

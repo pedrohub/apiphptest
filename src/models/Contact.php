@@ -35,8 +35,7 @@ class Contact {
  					array_push($itens, $contact);
  				}
 			}
-			
-			
+			$db = null;
 			return $itens;
 		
 		} catch(PDOException $e){
@@ -58,9 +57,47 @@ class Contact {
 			$stmt->bindParam('ID_PEOPLE' , $idPeople);
 	
 			$stmt->execute();
+			$db = null;
 			return true;
 		} catch(PDOException $e){
 			return $e;
 		}
 	}
+	
+	public function update($type, $value, $idPeople) {
+	
+		$sql = "UPDATE CONTACTS SET VALUE =:VALUE WHERE TYPE =:TYPE and ID_PEOPLE = $idPeople";
+		try{
+			$db = new db();
+			$db = $db->connect();
+	
+			$stmt = $db->prepare($sql);
+			$stmt->bindParam('TYPE' , $type);
+			$stmt->bindParam('VALUE' , $value);
+			$stmt->execute();
+			$db = null;
+			return true;
+		} catch(PDOException $e){
+			return $e;
+		}
+	}
+	
+	public function delete($id) {
+	
+		$sql = "DELETE FROM CONTACTS WHERE ID = $id";
+		try{
+			$db = new db();
+			$db = $db->connect();
+	
+			$stmt = $db->prepare($sql);
+			$stmt->execute();
+			$db = null;
+			return true;
+		} catch(PDOException $e){
+			return $e;
+		}
+	}
+	
+	
+	
 }

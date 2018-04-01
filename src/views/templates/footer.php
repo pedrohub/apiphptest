@@ -1,7 +1,7 @@
 </main> <!-- /container -->		
 <hr>
 <footer class="container">
-   <p>&copy;2017 - Pedro Edson	</p>
+   <p>&copy;2018 - Pedro Edson	</p>
 </footer>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>		    
 <script>window.jQuery || document.write('<script src="../src/views/templates/js/jquery.js"><\/script>')</script>		
