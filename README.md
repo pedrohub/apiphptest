@@ -19,13 +19,10 @@ Banco Mysql 5.5 ou superior
 2. Executar o script db.sql para criar a estrutura da base de dados, o script esta na pasta scripts do projeto
 
 ### RestFull
-*Atualmente a api tem 7 operações, que contemplam o CRUD de Pessoas e contatos.
+Atualmente a api tem 7 operações, que contemplam o CRUD de Pessoas e contatos. Na pasta scripts, tem exemplos de todas as chamadas das APIs.
 
-Pessoas
+### WebApp "WEATHER IN MY CITY" e "BALANCED BRACKETS"
+Esta aplicação tem duas paginas web, uma para ver as condiçoes do tempo pela cidade e outra para validar caracteres BRACKETS. Segue links:
 
-* Get Pessoas
-* 	http://server:port/bravitest/api/v1/peoples
-
-** Add Peoples with Contact
-** http://server:port/bravitest/api/v1/peoples/add 
-
+BALANCED BRACKETS: <http://seuservidor:port/pastaraizdoprojeto/public/>
+WEATHER IN MY CITY: <http://seuservidor:port/pastaraizdoprojeto/public/time> 
