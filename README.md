@@ -25,4 +25,5 @@ Atualmente a api tem 7 operações, que contemplam o CRUD de Pessoas e contatos. N
 Esta aplicação tem duas paginas web, uma para ver as condiçoes do tempo pela cidade e outra para validar caracteres BRACKETS. Segue links:
 
 BALANCED BRACKETS: <http://seuservidor:port/pastaraizdoprojeto/public/>
+
 WEATHER IN MY CITY: <http://seuservidor:port/pastaraizdoprojeto/public/time> 

@@ -1,0 +1,53 @@
+Get Peoples - Method Get
+http://server:port/apiphptest/api/v1/peoples
+
+
+Add Peoples with Contact - Method Post
+http://server:port/apiphptest/api/v1/peoples/add 
+{
+    "name": "Pedro",
+    "contacts": [
+        {
+            "type": "PHONE",
+            "value": "81-99941867"
+        },
+        {
+            "type": "EMAIL",
+            "value": "pedroteste@gmail.com"
+        }
+    ]
+}
+
+
+Add Contact - Method Post
+http://localhost:81/apiphptest/api/v1/contacts/add 
+{
+    "type": "WHATSAPP",
+    "value": "81-99941867",
+    "idPeople": "36"
+}
+
+
+Update Contact - Method Put
+http://localhost:81/apiphptest/api/v1/contacts/update/{idPeople}
+{
+    "type": "WHATSAPP",
+    "value": "81-111111111"
+}
+
+
+Delete Contact - Method Delete
+http://localhost:81/apiphptest/api/v1/contacts/delete/{idContact}
+
+
+Update People - Method Put
+http://localhost:81/apiphptest/api/v1/peoples/update/{id}
+{
+    "name": "Pedro Edson"
+}
+
+
+Delete People - Method Delete
+http://localhost:81/apiphptest/api/v1/peoples/delete/{id} 
+
+
