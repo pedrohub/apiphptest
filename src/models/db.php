@@ -7,9 +7,9 @@
  */
 class db {
 	private $dbhost = 'localhost';
-	private $dbuser = 'root';
-	private $dbpass = 'sicoadmin';
-	private $dbname = 'bravi_test';
+	private $dbuser = 'user';
+	private $dbpass = 'pass';
+	private $dbname = 'database';
 
 	public function connect() {
 		$mysql_connect_str = "mysql:host=$this->dbhost;dbname=$this->dbname";
