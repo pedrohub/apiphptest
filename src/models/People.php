@@ -2,6 +2,11 @@
 require_once  'db.php';
 require_once  'Contact.php';
 
+/**
+ * Classe model de pessoa
+ * 
+ * @author pedro.edson.o.lima
+ */
 class People {
 	
 	public $id;
@@ -9,8 +14,8 @@ class People {
 	public $contacts = array();
 	
 	/**
-	 * Return all peoples
-	 * @return Array Peoble|string
+	 * Retornar todas pessoas e contatos
+	 * @return Array Pessoas |string
 	 */
 	public function getAll() {
 		
@@ -48,6 +53,12 @@ class People {
 		}
 	}
 	
+	/**
+	 * Função para gravar pessoas e contatos
+	 * @param Pessoa $value
+	 * @param Array $contacts
+	 * @return boolean
+	 */
 	public function add($value, $contacts) {
 	
 		$sqlAddPeople = "INSERT INTO PEOPLES(NAME) VALUES (:NAME)";
@@ -75,6 +86,12 @@ class People {
 		}
 	}
 	
+	/**
+	 * Função para alterar nome da Pessoa
+	 * @param int $id
+	 * @param String $name
+	 * @return boolean|PDOException
+	 */
 	public function update($id, $name) {
 	
 		$sql = "UPDATE PEOPLES SET NAME =:NAME WHERE ID = $id";
@@ -92,6 +109,11 @@ class People {
 		}
 	}
 	
+	/**
+	 * Função para deletar uma pessoa e seus contatos
+	 * @param unknown $id
+	 * @return boolean|PDOException
+	 */
 	public function delete($id) {
 	
 		$sql = "DELETE FROM PEOPLES WHERE ID = $id";

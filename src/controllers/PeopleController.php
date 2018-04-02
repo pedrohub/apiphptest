@@ -2,13 +2,29 @@
 
 require realpath(dirname(__FILE__).'/../models/People.php');
 
+/**
+ * Classe Controller de Pessoa
+ * 
+ * @author pedro.edson.o.lima
+ *
+ */
 class PeopleController {
 
+	/**
+	 * Retorna todoas pessoas e seus contatos
+	 * @return Ambigous <multitype:, string>
+	 */
 	public function getAll() {
 		$people = new People();
 		return $people->getAll();
 	}
 	
+	/**
+	 * Adiciona uma pessoa, podendo adicionar contatos tambem
+	 * @param Pessoa $value
+	 * @param array $contacts
+	 * @return Ambigous <NULL, string>|Ambigous <NULL, number>
+	 */
 	public function add($value, $contacts) {
 		$res = null;
 		$people = new People();
@@ -31,6 +47,12 @@ class PeopleController {
 		return $res;
 	}
 	
+	/**
+	 * Alterar no da pessoa
+	 * @param int $id
+	 * @param String $name
+	 * @return number|string
+	 */
 	public function update($id, $name) {
 		$res = null;
 		$people = new People();
@@ -49,6 +71,11 @@ class PeopleController {
 		}
 	}
 	
+	/**
+	 * Remover uma pessoa por id
+	 * @param int $id
+	 * @return number|string
+	 */
 	public function delete($id) {
 		$res = null;
 		$people = new People();
@@ -66,6 +93,11 @@ class PeopleController {
 		}
 	}
 	
+	/**
+	 * Validar tipos dos contatos
+	 * @param unknown $contactsList
+	 * @return boolean
+	 */
 	function validateTypeContact($contactsList){
 		$resValidate = true;
 		foreach ($contactsList as $item){

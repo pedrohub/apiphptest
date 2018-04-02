@@ -1,7 +1,11 @@
 <?php
 
+/**
+ * Classe para fazer conexao com banco
+ * 
+ * @author pedro.edson.o.lima
+ */
 class db {
-	// Properties
 	private $dbhost = 'localhost';
 	private $dbuser = 'root';
 	private $dbpass = 'sicoadmin';

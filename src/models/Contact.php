@@ -1,6 +1,11 @@
 <?php
 require_once  'db.php';
 
+/**
+ * Classe model de pessoa
+ *
+ * @author pedro.edson.o.lima
+ */
 class Contact {
 	
 	public $id;
@@ -9,7 +14,7 @@ class Contact {
 	public $idPeople;
 	
 	/**
-	 * Return all peoples
+	 * Consulta contato pelo id da pessoa
 	 * @return Array Peoble|string
 	 */
 	public function getByIdPeople($idPeople) {
@@ -43,6 +48,13 @@ class Contact {
 		}
 	}
 	
+	/**
+	 * Função para adicionar um contato para pessoa
+	 * @param String $type
+	 * @param String $value
+	 * @param int $idPeople
+	 * @return boolean|PDOException
+	 */
 	public function add($type, $value, $idPeople) {
 	
 		$sql = "INSERT INTO CONTACTS(TYPE, VALUE, ID_PEOPLE) VALUES (:TYPE, :VALUE, :ID_PEOPLE)";
@@ -64,6 +76,13 @@ class Contact {
 		}
 	}
 	
+	/**
+	 * Função para alterar um contato
+	 * @param String $type
+	 * @param String $value
+	 * @param int $idPeople
+	 * @return boolean|PDOException
+	 */
 	public function update($type, $value, $idPeople) {
 	
 		$sql = "UPDATE CONTACTS SET VALUE =:VALUE WHERE TYPE =:TYPE and ID_PEOPLE = $idPeople";
@@ -82,6 +101,11 @@ class Contact {
 		}
 	}
 	
+	/**
+	 * Função para remover um contato
+	 * @param int $id
+	 * @return boolean|PDOException
+	 */
 	public function delete($id) {
 	
 		$sql = "DELETE FROM CONTACTS WHERE ID = $id";

@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Classe Controller para validar os caracteres brackets
+ * 
+ * @author pedro.edson.o.lima
+ */
 class BracketController {
 
 	public function validateStringBracket($value) {

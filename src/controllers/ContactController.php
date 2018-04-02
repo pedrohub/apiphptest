@@ -2,8 +2,21 @@
 
 require_once realpath(dirname(__FILE__).'/../models/Contact.php');
 
+/**
+ * Classe Controller de Contatos
+ * 
+ * @author pedro.edson.o.lima
+ *
+ */
 class ContactController {
 
+	/**
+	 * Função para adicionar um contato
+	 * @param String $type
+	 * @param String $value
+	 * @param int $idPeople
+	 * @return Ambigous <NULL, string>|Ambigous <string, number>
+	 */
 	public function add($type, $value, $idPeople) {
 		$res = null;
 		$contact = new Contact();
@@ -23,6 +36,13 @@ class ContactController {
 		}
 	}
 	
+	/**
+	 * Função para alterar um contato
+	 * @param String $type
+	 * @param String $value
+	 * @param int $idPeople
+	 * @return Ambigous <NULL, string>|Ambigous <string, number>
+	 */
 	public function update($type, $value, $idPeople) {
 		$res = null;
 		$contact = new Contact();
@@ -42,6 +62,11 @@ class ContactController {
 		}
 	}
 	
+	/**
+	 * Função para deletar um contato
+	 * @param int $id
+	 * @return number|string
+	 */
 	public function delete($id) {
 		$res = null;
 		$contact = new Contact();
@@ -59,6 +84,11 @@ class ContactController {
 		}
 	}
 	
+	/**
+	 * Validar os tipos de contatos
+	 * @param unknown $type
+	 * @return boolean
+	 */
 	function validateTypeContact($type){
 		$resValidate = true;
 		$contactsValids = array("PHONE", "EMAIL", "WHATSAPP");

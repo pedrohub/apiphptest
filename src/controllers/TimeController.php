@@ -1,7 +1,18 @@
 <?php
 
+/**
+ * Classe Controller Time
+ * Consultar a api openweathermap pela cidade
+ * @author pedro.edson.o.lima
+ *
+ */
 class TimeController {
 
+	/**
+	 * Retorna informações do tempo para uma cidade
+	 * @param String $value
+	 * @return NULL|string
+	 */
 	public function getWeatherTime($value) {
 
 		if ($value == null || empty($value)){
