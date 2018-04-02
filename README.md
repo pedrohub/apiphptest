@@ -18,14 +18,14 @@ Banco Mysql 5.5 ou superior
 
 2. Executar o script db.sql para criar a estrutura da base de dados, o script esta na pasta scripts do projeto
 
-###RestFull
+### RestFull
 *Atualmente a api tem 7 operações, que contemplam o CRUD de Pessoas e contatos.
 
 Pessoas
 
-*Get Pessoas
-*http://server:port/bravitest/api/v1/peoples
+* Get Pessoas
+* 	http://server:port/bravitest/api/v1/peoples
 
-**Add Peoples with Contact
-**http://server:port/bravitest/api/v1/peoples/add 
+** Add Peoples with Contact
+** http://server:port/bravitest/api/v1/peoples/add 
 
